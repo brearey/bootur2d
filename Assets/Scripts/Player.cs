@@ -31,7 +31,8 @@ public class Player : MonoBehaviour
             {
                 if (Input.touchCount == 1)
                 {
-                    if (Input.GetTouch(0).phase == TouchPhase.Ended)
+                    bool isLeftHalf = Input.GetTouch(0).position.x < Screen.width / 2;
+                    if (Input.GetTouch(0).phase == TouchPhase.Ended && isLeftHalf)
                     {
                         direction = Vector3.up * jumpForce;
                     }
