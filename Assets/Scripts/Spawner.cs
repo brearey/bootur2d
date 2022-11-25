@@ -14,6 +14,11 @@ public class Spawner : MonoBehaviour
     public float minSpawnRate = 1f;
     public float maxSpawnRate = 2f;
 
+    void Start()
+    {
+        Invoke(nameof(SpawnBox), 1f);
+    }
+
     private void OnEnable() {
         Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
     }
@@ -40,5 +45,12 @@ public class Spawner : MonoBehaviour
         }
 
         Invoke(nameof(Spawn), Random.Range(minSpawnRate, maxSpawnRate));
+    }
+
+    private void SpawnBox()
+    {
+        objects[7].prefab.transform.position = Vector3.zero;
+        objects[7].prefab.transform.position += transform.position;
+        Instantiate(objects[7].prefab);
     }
 }

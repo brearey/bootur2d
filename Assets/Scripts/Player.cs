@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -55,6 +56,12 @@ public class Player : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameManager.Instance.GamePause();
+            GameManager.Instance.ShowQuestion();
+        } else if (other.CompareTag("Box"))
+        {
+            Destroy(other.gameObject);
+            // TODO open next level
+            SceneManager.LoadScene("Level2", LoadSceneMode.Additive);
         }
     }
 }

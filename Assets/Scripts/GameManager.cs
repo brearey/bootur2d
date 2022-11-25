@@ -103,10 +103,20 @@ public class GameManager : MonoBehaviour
         player.GetComponent<AnimatedSprite>().enabled = false;
         player.GetComponent<Player>().enabled = false;
         spawner.gameObject.SetActive(false);
+    }
 
+    public void ShowQuestion()
+    {
         questionGroup.gameObject.SetActive(true);
         // Anim question
         questionGroup.GetComponent<Animator>().SetBool("isOpened", true);
+    }
+
+    public void HideQuestion()
+    {
+        // Anim question
+        questionGroup.GetComponent<Animator>().SetBool("isOpened", false);
+        questionGroup.gameObject.SetActive(false);
     }
 
 
@@ -120,11 +130,6 @@ public class GameManager : MonoBehaviour
         player.GetComponent<AnimatedSprite>().enabled = true;
         player.GetComponent<Player>().enabled = true;
         spawner.gameObject.SetActive(true);
-
-        
-        // Anim question
-        questionGroup.GetComponent<Animator>().SetBool("isOpened", false);
-        questionGroup.gameObject.SetActive(false);
     }
 
     private void onDestroy()
