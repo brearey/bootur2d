@@ -98,7 +98,10 @@ public class GameManager : MonoBehaviour
         gameSpeed = 0f;
         enabled = false;
 
-        player.gameObject.SetActive(false);
+        // player.gameObject.SetActive(false);
+        // Toggle off animation
+        player.GetComponent<AnimatedSprite>().enabled = false;
+        player.GetComponent<Player>().enabled = false;
         spawner.gameObject.SetActive(false);
 
         questionGroup.gameObject.SetActive(true);
@@ -110,7 +113,10 @@ public class GameManager : MonoBehaviour
         gameSpeed = currentGameSpeed;
         enabled = true;
 
-        player.gameObject.SetActive(true);
+        // player.gameObject.SetActive(true);
+        // Toggle on animation
+        player.GetComponent<AnimatedSprite>().enabled = true;
+        player.GetComponent<Player>().enabled = true;
         spawner.gameObject.SetActive(true);
 
         questionGroup.gameObject.SetActive(false);

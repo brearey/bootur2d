@@ -315,7 +315,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.9166667, y: 1}
+  m_Size: {x: 1.61, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -346,8 +346,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.45833334
+  m_Height: 1.98
+  m_Radius: 0.51
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -420,7 +420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &357582567
@@ -2154,7 +2154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - prefab: {fileID: 3926917011630731405, guid: 00c1ce9438af28f4783bc30ca53b61b8,
+  - prefab: {fileID: 9126895420321205097, guid: 28862dcd82c42b746b72f92892393305,
       type: 3}
     spawnChance: 0.2
   - prefab: {fileID: 9111235999010403720, guid: ce7211bb8f2860f41b8a7e7395de2c5b,

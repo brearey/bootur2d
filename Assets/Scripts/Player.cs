@@ -49,7 +49,10 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Obstacle")) {
             Destroy(other.gameObject);
-            //GameManager.Instance.GameOver();
+            GameManager.Instance.GameOver();
+        } else if (other.CompareTag("question"))
+        {
+            Destroy(other.gameObject);
             GameManager.Instance.GamePause();
         }
     }

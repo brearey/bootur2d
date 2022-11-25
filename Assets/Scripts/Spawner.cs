@@ -28,6 +28,11 @@ public class Spawner : MonoBehaviour
             if (spawnChance < obj.spawnChance) {
                 GameObject obstacle = Instantiate(obj.prefab);
                 obstacle.transform.position += transform.position;
+
+                if (obstacle.CompareTag("question"))
+                {
+                    obstacle.transform.position += new Vector3(0, 2f, 0);
+                }
                 break;
             }
 
