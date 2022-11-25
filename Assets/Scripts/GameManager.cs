@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(false);
 
         questionGroup.gameObject.SetActive(true);
+        // Anim question
+        questionGroup.GetComponent<Animator>().SetBool("isOpened", true);
     }
 
 
@@ -120,6 +122,8 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(true);
 
         questionGroup.gameObject.SetActive(false);
+        // Anim question
+        questionGroup.GetComponent<Animator>().SetBool("isOpened", false);
     }
 
     private void onDestroy()
