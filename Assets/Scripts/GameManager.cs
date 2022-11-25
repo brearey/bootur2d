@@ -121,9 +121,10 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player>().enabled = true;
         spawner.gameObject.SetActive(true);
 
-        questionGroup.gameObject.SetActive(false);
+        
         // Anim question
         questionGroup.GetComponent<Animator>().SetBool("isOpened", false);
+        questionGroup.gameObject.SetActive(false);
     }
 
     private void onDestroy()
