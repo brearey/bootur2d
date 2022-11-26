@@ -49,8 +49,9 @@ public class Spawner : MonoBehaviour
 
     private void SpawnBox()
     {
-        objects[7].prefab.transform.position = Vector3.zero;
-        objects[7].prefab.transform.position += transform.position;
-        Instantiate(objects[7].prefab);
+        // spawn final box
+        objects[3].prefab.transform.position = Vector3.zero;
+        objects[3].prefab.transform.position += transform.position;
+        Instantiate(objects[3].prefab);
     }
 }

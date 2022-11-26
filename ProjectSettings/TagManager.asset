@@ -7,6 +7,7 @@ TagManager:
   - Obstacle
   - question
   - Box
+  - Weapon
   layers:
   - Default
   - TransparentFX

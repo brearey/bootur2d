@@ -51,10 +51,12 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         gameSpeed += gameSpeedIncrease * Time.deltaTime;
-        score += gameSpeed * Time.deltaTime;
-        //scoreText.text = Mathf.FloorToInt(score).ToString("D5");
+        score += gameSpeed * Time.deltaTime / 10;
+        scoreText.text = Mathf.FloorToInt(score).ToString("D5");
         // Diamonds
         scoreText.text = Mathf.FloorToInt(diamondsCount).ToString("D5");
+        // Stars
+        highscoreText.text = Mathf.FloorToInt(score).ToString("D5");
     }
 
     public void NewGame()
@@ -147,7 +149,5 @@ public class GameManager : MonoBehaviour
             highscore = score;
             PlayerPrefs.SetFloat("highscore", highscore);
         }
-
-        highscoreText.text = Mathf.FloorToInt(highscore).ToString("D5");
     }
 }

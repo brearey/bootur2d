@@ -5,13 +5,17 @@ public class Player : MonoBehaviour
 {
     private CharacterController character;
     private Vector3 direction;
+    private BoxCollider weapon;
 
     public float gravity = 9.8f * 2f;
     private float jumpForce = 8f;
 
+    private bool isLeftHalf;
+
     private void Awake()
     {
         character = GetComponent<CharacterController>();
+        weapon = gameObject.GetComponentInChildren<BoxCollider>();
     }
 
     private void OnEnable()
@@ -32,7 +36,7 @@ public class Player : MonoBehaviour
             {
                 if (Input.touchCount == 1)
                 {
-                    bool isLeftHalf = Input.GetTouch(0).position.x < Screen.width / 2;
+                    isLeftHalf = Input.GetTouch(0).position.x < Screen.width / 2;
                     if (Input.GetTouch(0).phase == TouchPhase.Ended && isLeftHalf)
                     {
                         direction = Vector3.up * jumpForce;
@@ -61,7 +65,8 @@ public class Player : MonoBehaviour
         {
             Destroy(other.gameObject);
             // TODO open next level
-            SceneManager.LoadScene("Level2", LoadSceneMode.Additive);
+            //SceneManager.LoadScene("Level2", LoadSceneMode.Additive);
         }
+
     }
 }
